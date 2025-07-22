@@ -1,9 +1,9 @@
-import { Card } from "@/components/common/Card"
+import Card from '@/components/common/Card'
 
 export default function Home() {
     return <>
         <section>
-            <Card title="item1" content="hello am her to..." />
+            <Card  title="New title" content="this is some randome writing, dog cat hill hkin nam female rare sure"/>
         </section>
     </>
 }

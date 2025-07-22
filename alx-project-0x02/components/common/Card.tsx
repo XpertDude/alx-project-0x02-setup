@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardProps } from "@/interfaces"
-export const Card: React.FC<CardProps> = ({ title, content }) => {
+import { type CardProps } from '@/interfaces/index'
+const Card: React.FC<CardProps> = ({ title, content }) => {
     return <>
     <div className='w-full h-100 flex flex-col justify-around p-2 m-1.5 bg-green-400 rounded-b-md max-w-sm'>
         <h1 className='text-blue-950 text-3xl'>{title}</h1>
@@ -8,3 +8,5 @@ export const Card: React.FC<CardProps> = ({ title, content }) => {
     </div>
     </>
 }
+
+export default Card
