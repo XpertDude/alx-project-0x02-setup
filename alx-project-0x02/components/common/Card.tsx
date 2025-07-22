@@ -1,0 +1,10 @@
+import React from 'react';
+import { CardProps } from "@/interfaces"
+export const Card: React.FC<CardProps> = ({ title, content }) => {
+    return <>
+    <div className='w-full h-100 flex flex-col justify-around p-2 m-1.5 bg-green-400 rounded-b-md max-w-sm'>
+        <h1 className='text-blue-950 text-3xl'>{title}</h1>
+        <div className='w-full h-50 p-0.5 border-2 border-t-white rounded-b-xl shadow-2xl'>{content}</div>
+    </div>
+    </>
+}

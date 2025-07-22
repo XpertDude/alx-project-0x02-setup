@@ -1,7 +1,10 @@
+import { Header } from "@/components/layout/Header"
+
 export default function Welcome () {
   return <>
   <main>
-    <div>Welcome</div>
+    <Header /> 
+    <div>Welcome</div> 
   </main>
   </>
 }
