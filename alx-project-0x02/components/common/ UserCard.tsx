@@ -1,6 +1,6 @@
 import { UserProps } from "@/interfaces"
 
-const UserCard: React.FC<UserProps> = ({ id, name, username, email, address: { street, suite, city, zipcode, geo: { lat, lng } } }) => {
+export default function UserCard({ id, name, username, email, address: { street, suite, city, zipcode, geo: { lat, lng } } }: UserProps){
     return (
         <div key={id} className="w-60 h-90 bg-orange-200 rounded-2xl text-black flex flex-col justify-center items-center p-2 ml-2">
             <div className="p-1">
@@ -22,5 +22,3 @@ const UserCard: React.FC<UserProps> = ({ id, name, username, email, address: { s
         </div>
     )
 }
-
-export default UserCard
