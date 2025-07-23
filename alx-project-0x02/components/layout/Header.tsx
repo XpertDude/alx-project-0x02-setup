@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export const Header = () => {
+ const Header = () => {
     return (
         <>
             <nav className="w-full h-11 p-2 text-black bg-white flex justify-between items-center">
@@ -14,3 +14,5 @@ export const Header = () => {
         </>
     )
 }
+
+export default Header
