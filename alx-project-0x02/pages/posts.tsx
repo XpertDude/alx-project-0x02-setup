@@ -1,17 +1,26 @@
 import Card from '@/components/common/Card';
+import PostCard from '@/components/common/PostCard';
 import PostModal from '@/components/common/PostModal';
 import Header from '@/components/layout/Header';
-import { CardProps } from '@/interfaces';
-import { useState } from 'react';
+import { CardProps, PostProps } from '@/interfaces';
+import { useEffect, useState } from 'react';
 
 export default function Posts() {
-    const [posts, setPosts] = useState<CardProps[]>([]);
+    const [posts, setPosts] = useState<PostProps[]>([]);
     const [showHide, setShowHide] = useState(false);
-
-    const handlePosts = (post: CardProps) => {
-        setPosts((prev) => [...prev, post]);
-        setShowHide(false);
-    }
+    useEffect(() => {
+        const getPosts = async () => {
+            try {
+                const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+                const data = await res.json();
+                if (!res.ok) return console.log('Failed to get data')
+                setPosts(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getPosts()
+    }, [])
     return (
         <>
             <section>
@@ -24,13 +33,12 @@ export default function Posts() {
                         Create post
                     </button>
                 </div>
-
-                {showHide && <PostModal onSubmit={handlePosts} />}
-
                 <div className='p-4 grid-cols-4 grid-flow-row grid gap-4 justify-center items-center'>
-                    {posts.map((post, index) => (
-                        <Card key={index} title={post.title} content={post.content} />
-                    ))}
+                    {
+                        posts && posts.map((post, index) => {
+                            return <PostCard key={index} userId={post.userId} id={post.id} title={`${post.title}`} body={`${post.body}`} />
+                        })
+                    }
                 </div>
             </section>
         </>
