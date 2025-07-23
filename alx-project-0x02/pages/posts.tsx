@@ -5,7 +5,6 @@ import Header from '@/components/layout/Header';
 import { PostProps } from '@/interfaces';
 import { useState } from 'react';
 
-// ✅ getStaticProps for static generation
 export async function getStaticProps() {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts');

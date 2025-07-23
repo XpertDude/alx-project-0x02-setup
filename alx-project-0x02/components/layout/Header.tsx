@@ -8,6 +8,7 @@ import Link from "next/link"
                 <ul className="w-50 flex justify-around">
                     <Link href="/home">Home</Link>
                     <Link href="/posts">Posts</Link>
+                    <Link href="/users">Users</Link>
                     <Link href="/about">About</Link>
                 </ul>
             </nav>
