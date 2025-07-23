@@ -1,4 +1,4 @@
-import { ButtonProps } from "@/interfaces"
+import { type ButtonProps } from "@/interfaces"
 const Button: React.FC<ButtonProps> = ({ title, size, shape }) => {
     const sizes = {
         "small": "text-sm p-1 mt-5",
@@ -7,7 +7,7 @@ const Button: React.FC<ButtonProps> = ({ title, size, shape }) => {
     }
     return (
         <div>
-            <button className={`${sizes[size]} ${shape} bg-amber-200 text-black`}>{title}</button>
+            <button className={`${sizes[size]} ${shape} bg-amber-200 text-black cursor-pointer`}>{title}</button>
         </div>
     )
 }
